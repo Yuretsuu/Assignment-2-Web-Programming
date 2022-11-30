@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet"type="text/css" href="inserthere.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Liz Quach">
+    <meta name="email" content="quac0042@algonquinlive.com">
+    <meta name="date" content="2022-11-13">
+    <title>Webpage</title>
+</head>
+<body>
+    <div class="container">
+        <!-- About Us Section -->
+        <nav>
+            <!-- Specific elements in the nav bar will have dropdowns. Nav bar will disappear on scroll down. Scroll up- nav will appear-->
+            <ul class="navbar">
+                <li>Home</li> 
+                <li>About Us</li>
+                <li>Menu</li>
+                <!-- Drop "Takeout and Delivery"-->
+                <li>Order</li>
+                <li>Contact Us</li>
+            </ul>
+        </nav>
+            <!-- Set display to flex -->
+            <div class="gallery-about">
+                <!-- Have images float left, as well as padding from the bottom of the viewscreen -->
+                <div class="left-column">
+                    <!-- Picture gallery(auto) of interior of Parle -->
+                    <img src="images/image_placeholder.jpg" alt="Restaurant Gallery">
+                </div>
+                <!-- Have text float right -->
+                <div class="rightcolumn">
+                    <h4>About Us</h4>
+                    <p>A fresh new take on Vietnamese cuisine. A handcrafted & family recipe powered kitchen - from our table to yours.</p>
+                    <!-- This will link to form.html page -->
+                    <button>Order Pickup</button>
+                </div>     
+            </div>
+    </div>
+
+        <!-- Second Page -->
+        <div class="container">
+            <div class="left-map"> Embed map function here</div>
+            <div class="right-text">
+                <!-- Underline headers (find a design) -->
+                <h4>Location</h4>
+                <p>Come visit us! We are situated right in the Ottawa's Byward Market.</p>
+                <p>313 Dalhousie St, Byward Market, Ottawa, Ontario, Canada</p>
+                <h4>Hours</h4>
+                <!-- Make sure this is formatted vertically exactly like how the texts are formatted right now. -->
+                <p>Monday-Friday: 4PM to 12AM <br>
+                    Weekends: 11AM to 12AM
+                </p>     
+            </div>
+        </div>
+        <!-- Third Page -->
+        <div class="container">
+            <!-- Buttons will link to correspnding pages in the html. -->
+            <div class="nav-buttons">
+                <!-- Redirects user to the menu page- where they can view the menu -->
+                <button class="viewmenu"><a href="menu.html">Menu</a></button>
+                <!-- Redirects user to the order form page, which allows user to choose from "pickup" or "delivery". Delivery option will
+                embed UberEats link, and pick-up will allow user to add items to cart and check out using a sign up form to collect information. -->
+                <button class="togo"><a href="form.html">Order To-go</a></button>          
+            </div>
+            <!-- This should be inline with the nav-button container above. -->
+            <div class="instagram">Connect with us on Instagram!</div>
+        </div>
+        <footer class="footer">
+            <!-- Content to be determined -->
+        </footer>
+</body>
