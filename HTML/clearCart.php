@@ -1,6 +1,7 @@
 <?php session_start();
+include_once "cart.php";
 
-$_SESSION['cart'] = null;
-
-header("Location:form.php");
+clearCart();
+$redirect = $_REQUEST['redirect'];
+header("Location:$redirect")
 ?>

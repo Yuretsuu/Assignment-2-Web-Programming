@@ -1,5 +1,6 @@
 <?php session_start();
 include_once "menuItems.php";
+include_once "cart.php";
 
 $addItem = null;
 $addItemSize = null;
@@ -15,10 +16,9 @@ if (isset($_REQUEST['item'])) {
     $addItemPrice = $menu[$addItem]["sizes"][$addItemSize];
 
     // creates an array to store cart items(stores name and size). $_SESSION will call the 'cartitem' and add it to the _$SESSION array.
-    $cartItem = ['name' => $addItem, 'size' => $addItemSize];
-    $_SESSION['cart'][] = $cartItem;
-
-    echo var_dump($_SESSION['cart']);
+    // $cartItem = ['name' => $addItem, 'size' => $addItemSize];
+    // $_SESSION['cart'][] = $cartItem;
+    addCartItem($addItem, $addItemSize);
 }
 ?>
 
@@ -55,7 +55,7 @@ if (isset($_REQUEST['item'])) {
                                 echo "<td>";
                                 foreach ($itemDetails["sizes"] as $size => $price) {
 
-                                    $id = $itemName.'+'.$size;
+                                    $id = menuItemId($itemName, $size);
 
                                     echo "<input type='radio' name='item' id='$id' value='$id'>";
                                     echo "<label for='$id'> $size ($price) </label> <br>";
@@ -69,6 +69,10 @@ if (isset($_REQUEST['item'])) {
                     </form>
                         
                     <h3>Cart</h3>
+                    <form method="post" action="clearCart.php">
+                        <input type="hidden" name="redirect" value="form.php">
+                        <input type="submit" value="Clear">
+                    </form>
                     <?php include "displayCart.php"; ?>
 
                 </div>

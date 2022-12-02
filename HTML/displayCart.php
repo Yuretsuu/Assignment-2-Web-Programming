@@ -1,14 +1,13 @@
 <?php 
-session_start();
 include_once "menuItems.php";
+include_once "cart.php";
 
-// if cart doesn't exist or if cart is empty,
-if (!isset($_SESSION['cart'])
-    || count($_SESSION['cart']) < 1)
+$cart = getCart();
+
+// if cart is empty,
+if (getCartSize() < 1)
     // early out
     die();
-
-$cart = $_SESSION['cart'];
 ?>
     <h3>Cart Summary</h3>
     <table>
@@ -20,22 +19,22 @@ $cart = $_SESSION['cart'];
             <th>Price</th>
         </tr>
         <?php 
-        //loop through $cart[] and print each instance 
-        foreach ($cart as $cartItemNumber => $cartItem){
-            $cartItemNumber++;
+        //loop through $cart[] and print each instance
+        foreach ($cart as $cartItem){
             $itemName = $cartItem['name'];
             $itemSize = $cartItem['size'];
-            echo "<tr><td> $cartItemNumber </td>";
+            $itemQuantity = $cartItem['quantity'];
+            $itemPrice = $menu[$itemName]['sizes'][$itemSize];
+            echo "<tr><td> $itemQuantity x </td>";
             echo "<td>$itemName</td>";
             echo "<td>$itemSize</td>";
-            echo "<td>$ ".$menu[$itemName]['sizes'][$itemSize]."</td>";
-
+            echo "<td>$ ".$itemPrice."</td>";
             echo "</tr>";
         } 
+            echo"<tr><td>Subtotal</td>";  
+            echo "<td>".calculateCartSubtotal()."</td>";
             
+            
+            echo "</tr>"
         ?>
     </table>
-
-    <form method="post" action="clearCart.php">
-        <input type="submit" value="Clear">
-    </form>

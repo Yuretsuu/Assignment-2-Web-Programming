@@ -22,4 +22,9 @@ $menu = [
         ]
     ]
 ];
+
+function menuItemId($itemName, $itemSize) {
+
+    return $itemName.'+'.$itemSize;
+}
 ?>
