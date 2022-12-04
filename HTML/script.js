@@ -138,3 +138,56 @@ $.validator.setDefaults( {
         });
       });
        */
+/* validation methods we can rework into the assigment incase a customer types or put something that shouldnt be written e.g her name or email address if it was blank?
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+      function validate() {
+        var mailPattern = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+        if (!document.getElementById("email").value.match(mailPattern)) {
+            document.getElementById('error-email').innerHTML = "Please enter email in format xyz@xyz.xyz";
+            document.getElementById('error-name').style.color = "red";
+            document.getElementById("email").value = "";
+            document.form1.email.focus();
+            return false;
+        } else {
+            var login = document.getElementById("login").value;
+            if (login == " " || login.length >= 20) {
+                document.getElementById('error-name').innerHTML = "Login name must not be empty or more than 20 characters";
+                document.getElementById('error-name').style.color = "red";
+                document.getElementById("login").value = "";
+                document.form1.login.focus();
+                return false;
+            } else {
+                document.getElementById("login").value = login.toLowerCase();
+                var pwdPattern = /^(.[a-z].)(.[A-Z].)$/;
+                var pwd = document.getElementById("pass").value;
+                if ((pwd == " ") || (pwd.length < 5) || (!pwd.match(pwdPattern))) {
+                    document.getElementById('error-pwd').innerHTML = "Password must be atleast 6 character long with atleast 1 uppercase and lowercase letters";
+                    document.getElementById('error-pwd').style.color = "red";
+                    document.getElementById("pass").value = "";
+                    document.form1.pass.focus();
+                    return false;
+                } else {
+                    var pass1 = document.getElementById("pass").value;
+                    var pass2 = document.getElementById("pass2").value;
+                    if ((pass2 == " ") || (pass2 != pass1)) {
+                        document.getElementById('error-repwd').innerHTML = "This field must match with the password field";
+                        document.getElementById('error-repwd').style.color = "red";
+                        document.getElementById("pass2").value = "";
+                        document.form1.pass2.focus();
+                        return false;
+                    } else {
+                        var check = document.getElementById("terms").checked;
+                        if (!check) {
+                            document.getElementById('error-chk').innerHTML = "Check the terms to proceed";
+                            document.getElementById('error-chk').style.color = "red";
+                            document.form1.terms.focus();
+                            return false;
+                        } else
+                            return true;
+                    }
+                }
+    
+            }
+        }
+    }
+    */
