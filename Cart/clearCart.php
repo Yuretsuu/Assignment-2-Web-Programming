@@ -1,5 +1,5 @@
 <?php session_start();
-include_once "cart.php";
+include_once "functions/cart.php";
 
 clearCart();
 $redirect = $_REQUEST['redirect'];
