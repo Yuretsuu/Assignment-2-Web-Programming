@@ -1,6 +1,6 @@
 <?php session_start();
 include_once "menuItems.php";
-include_once "cart.php";
+include_once "functions/cart.php";
 
 $addItem = null;
 $addItemSize = null;
