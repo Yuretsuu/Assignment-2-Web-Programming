@@ -8,6 +8,62 @@
     background-color: rgb(245, 237, 220);
     margin:0;
 }
+
+.nav{
+    align-items: center;
+    height: 40px;
+    transition: transform 1s;
+    
+}
+
+.navbar{
+    position: fixed;
+    background-color: aqua;
+    width: 100%;
+    height: inherit;
+    
+}
+
+.navbar:hover{
+    height: 60px;
+}
+
+.navbar ul li{
+    list-style: none;
+    position: relative;
+    padding: 5px;
+    display: inline-block;
+}
+
+.navbar ul li:hover{
+    color: blueviolet;
+    background-color: white;
+    margin: auto;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+}
+
+.navbar ul li::after{
+    content: '';
+    background-color: lightskyblue;
+    transition: 0.5s;
+    width: 0%;
+    height: 2px;
+    display: block;
+    margin: auto;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.nav-disappear{
+    transform: translateY(-100px);
+    transition: transform 1s;
+
+}
 /* CSS for About US (1) */
 /* Imported Fonts for this page go here */
 
