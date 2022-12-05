@@ -93,4 +93,5 @@ h1 {
 iframe {
     width: 80%;
     height: 50;
+    filter: invert(100);
 }
