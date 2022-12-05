@@ -37,8 +37,8 @@ if (isset($_REQUEST['submit'])) {
             <input type="text" name= "phone" id="phone">
 
             <!-- Payment Type -->
-            <label for="paymentType">Payment Type:</label>
-            <select name="paymentType" id="paymentType">
+            <label for="cardType">Payment Type:</label>
+            <select name="cardType" id="cardType">
                 <option></option>
                 <option value="mastercard">Mastercard</option>
                 <option value="visa">Visa</option>
