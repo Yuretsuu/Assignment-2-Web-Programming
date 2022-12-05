@@ -1,19 +1,51 @@
 * {
     font-family: sans-serif;
-    background-color: rgb(5, 109, 109);
-    color: white;
 }
 
-.container:root {
-    background-color: rgb(245, 237, 220);
+body{
+    background-color: black;
+}
+
+/* Slideshow CSS */
+.slideshow-container {
+    height:95vh;
+    width:100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.slideshow{
+    height:100%;
+    width:100%;    
+}
+
+.slideshow img {
+    /* display: flex; */
+    display:block;
+    position: relative;
+    object-fit: cover;
+    overflow: none;
+    /* bottom:40px; */
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    height: 100%;
+    filter:brightness(60%);
+}
+
+.restaurant-logo{
+    position: absolute;
+    /* right:0px;
+    bottom:100px; */
+}
+/* Main page CSS */
+.container{
+    background-color: rgb(255, 245, 222);
     margin: 0;
 }
 
-header {
-    background-position: center;
-    background-size: 100%;
-    position: fixed;
-}
 
 .nav {
     align-items: center;
@@ -122,16 +154,6 @@ body {
 img {
     vertical-align: middle;
 }
-
-
-/* Slideshow container */
-
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-}
-
 
 /* Caption text */
 
