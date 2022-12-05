@@ -1,28 +1,38 @@
 <?php
+include_once "../DS/User.php";
+include_once "../DS/UserDAO.php";
 
+$dao = new UserDAO();
 // client has submitted form
 if (isset($_REQUEST['submit'])) {
+    $user = new User();
 
-    $_SESSION['user']['name'] = $_REQUEST['customerFirstName'];
+    $user->Fname = $_REQUEST['customerFirstName'];
+    $user->Lname = $_REQUEST['customerLastName'];
+    $user->phone = $_REQUEST['phone'];
+    $user->email = $_REQUEST['email'];
+
+    $dao->insertUser($user);
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet"type="text/css" href="inserthere.css">
+    <link rel="stylesheet"type="text/css" href="inserthere.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Liz Quach">
     <meta name="email" content="quac0042@algonquinlive.com">
     <meta name="date" content="2022-12-02">
     <title>Webpage</title>
+    <script src="../JS/validate.js"></script>
 </head>
 <body>
 
     <div class="container">
         <h1>Cart Checkout</h1>
-        <form>
+        <form method="post" onsubmit= " return validate()">
             <!-- Contact Info -->
             <label for="customerFirstName">First Name</label>
             <input type="text" name= "customerFirstName" id="customerFirstName">
@@ -32,9 +42,11 @@ if (isset($_REQUEST['submit'])) {
 
             <label for="customerEmail">Email</label>
             <input type="text" name= "email" id="email">
+            <div class="errorDiv"></div>
 
             <label for="customerPhone">Phone</label>
             <input type="text" name= "phone" id="phone">
+            <div class="errorDiv"></div>
 
             <!-- Payment Type -->
             <label for="cardType">Payment Type:</label>
@@ -44,18 +56,23 @@ if (isset($_REQUEST['submit'])) {
                 <option value="visa">Visa</option>
                 <option value="Amex">Amex</option>
             </select>
+            <div class="errorDiv"></div>
             
 
             <!-- Card Info -->
             <label for="cardNumber">Card Number</label>
-            <input type="number" name= "cardNumber" id="cardNumber">
+            <input type="text" name= "cardNumber" id="cardNumber">
+            <div class="errorDiv"></div>
 
             <label for="cardExpiry">Expiry</label>
             <input type="date" name= "cardExpiry" id="cardExpiry">
+            <div class="errorDiv"></div>
 
             <label for="CVV">CVV</label>
-            <input type="number" name= "CVV" id="CVV" max="999" min="0">
+            <input type="text" name= "CVV" id="CVV" max="999" min="0">
+
             <input type="submit" name="submit">
+            <div class="errorDiv"></div>
         </form>
         <?php include "displayCart.php"; ?>
     </div>    
