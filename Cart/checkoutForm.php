@@ -1,18 +1,30 @@
-<?php
+<?php session_start();
 include_once "../DS/User.php";
 include_once "../DS/UserDAO.php";
+include_once "../DS/Order.php";
+include_once "../DS/OrderDAO.php";
+include_once "functions/cart.php";
+$userDAO = new UserDAO();
+$orderDAO = new OrderDAO();
 
-$dao = new UserDAO();
 // client has submitted form
 if (isset($_REQUEST['submit'])) {
-    $user = new User();
 
+    $user = new User();
     $user->Fname = $_REQUEST['customerFirstName'];
     $user->Lname = $_REQUEST['customerLastName'];
     $user->phone = $_REQUEST['phone'];
     $user->email = $_REQUEST['email'];
+    $userDAO->insertUser($user);
 
-    $dao->insertUser($user);
+    $order= new Order();
+    $order->customerID = $userDAO->getLastUserID();
+    $order-> date = date("Y-m-d");
+    $order->subtotal = calculateCartSubtotal();
+    $orderDAO->insertOrder($order);
+
+    header('Location:CheckoutSummary.php');
+    exit();
 }
 ?>
 
@@ -72,7 +84,6 @@ if (isset($_REQUEST['submit'])) {
             <input type="text" name= "CVV" id="CVV" max="999" min="0">
 
             <input type="submit" name="submit">
-            <div class="errorDiv"></div>
         </form>
         <?php include "displayCart.php"; ?>
     </div>    

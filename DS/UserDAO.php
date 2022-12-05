@@ -6,25 +6,32 @@ class UserDAO{
 
     public function getUser($id){
         $con = Datasource::getInst()->getConnection();
-        $result = $con -> query("Select * from customers");
+        $result = $con -> query("Select * from customer where id = $id");
         $array = array();
 
         if ($result->num_rows ==0)
             return null;
 
-        while ($row = $result->fetch_assoc()){
-            $user = new User();
+        $row = $result->fetch_assoc();
+        
+        $user = new User();
+        $user ->id = $row['id'];
+        $user->Fname= $row['firstname'];
+        $user ->Lname = $row['lastname'];
+        $user ->phone = $row['phonenumber'];
+        $user ->email = $row['email'];
+        return $user;
+    }
 
-            $user ->id = $row['id'];
-            $user->Fname= $row['firstname'];
-            $user ->Lname = $row['lastname'];
-            $user ->phone = $row['phonenumber'];
-            $user ->email = $row['email'];
+    public function getLastUserID() {
+        $con = Datasource::getInst()->getConnection();
+        $result = $con->query("Select max(id) from customer");
 
-            $array[]= $user;
-        }
-        return $array;
-    } 
+        if ($result->num_rows ==0)
+            return null;
+
+        return $result->fetch_array()[0];
+    }
 
     public function insertUser($user){
         $con = Datasource::getInst()->getConnection();

@@ -103,13 +103,20 @@ if (isset($_REQUEST['search'])) {
                     </form>
                 </div>
                 <h3>Cart</h3>
-                <form method="post" action="clearCart.php">
-                    <input type="hidden" name="redirect" value="form.php">
-                    <input type="submit" value="Clear">
-                </form>
+                <div class="clear-cart">
+                    <form method="post" action="clearCart.php">
+                        <input type="hidden" name="redirect" value="form.php">
+                        <input type="submit" value="Clear">
+                    </form>
+                </div>
                 <?php include "displayCart.php"; ?>
-                <div class="clear-cart"></div>
-                <div class="check-out"></div>
+                <div class="check-out">
+                <div class="clear-cart">
+                    <form method="post" action="checkoutForm.php">
+                        <input type="submit" value="Checkout">
+                    </form>
+                </div>
+                </div>
             </div>
         </div>
 </body>
