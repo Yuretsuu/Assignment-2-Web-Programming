@@ -1,40 +1,44 @@
-.container:root{
-    background-color: rgb(245, 237, 220);
-    margin: 0;
+*{
+    font-family: sans-serif;
+    background-color: rgb(5, 109, 109);
+    color: white;
 }
 
 
-/* CSS for Index Page */
-
-
-/* Insert code for Index Page here */
-
-.container:root {
+.container:root{
     background-color: rgb(245, 237, 220);
-    margin: 0;
+    margin:0;
+}
+
+header{
+    background-position: center;
+    background-size: 100%;
+    position: fixed;
 }
 
 .nav{
     align-items: center;
     height: 40px;
     transition: transform 1s;
-    
+    width: 100%;
+    height: 40px;
+    position: fixed;
+
 }
 
-.navbar {
+.navbar{
     position: fixed;
     background-color: aqua;
-    width: 100%;
-    height: inherit;
-    
+
+
 }
 
-.navbar:hover {
+.navbar:hover{
     height: 60px;
     position: fixed;
 }
 
-.navbar ul li {
+.navbar ul li{
     list-style: none;
     position: relative;
     padding: 5px;
@@ -42,16 +46,16 @@
 }
 
 .navbar ul li:hover{
-    color: blueviolet;
+    color: rgb(5, 109, 109);
     background-color: white;
     margin: auto;
 }
 
-.navbar ul li a {
+.navbar ul li a{
     text-decoration: none;
 }
 
-.navbar ul li::after {
+.navbar ul li::after{
     content: '';
     background-color: rgb(5, 109, 109);
     transition: 0.5s;
@@ -61,13 +65,22 @@
     margin: auto;
 }
 
-.navbar ul li:hover::after {
+.navbar ul li:hover::after{
     width: 100%;
 }
 
-.nav-disappear {
+.nav-disappear{
     transform: translateY(-100px);
     transition: transform 1s;
+
+}
+
+footer {
+    color: rgb(5, 109, 109);
+    background-color: white;
+    width: 100%;
+    bottom: 0;
+    position: relative;
 
 }
 
