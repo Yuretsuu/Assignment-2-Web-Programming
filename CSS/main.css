@@ -1,51 +1,54 @@
-.container:root{
+.container:root {
     background-color: rgb(245, 237, 220);
-    margin:0;
-}
-/* CSS for Index Page */
-/* Insert code for Index Page here */
-.container:root{
-    background-color: rgb(245, 237, 220);
-    margin:0;
+    margin: 0;
 }
 
-.nav{
+
+/* CSS for Index Page */
+
+
+/* Insert code for Index Page here */
+
+.container:root {
+    background-color: rgb(245, 237, 220);
+    margin: 0;
+}
+
+.nav {
     align-items: center;
     height: 40px;
     transition: transform 1s;
-    
 }
 
-.navbar{
+.navbar {
     position: fixed;
     background-color: aqua;
     width: 100%;
     height: inherit;
-    
 }
 
-.navbar:hover{
+.navbar:hover {
     height: 60px;
 }
 
-.navbar ul li{
+.navbar ul li {
     list-style: none;
     position: relative;
     padding: 5px;
     display: inline-block;
 }
 
-.navbar ul li:hover{
+.navbar ul li:hover {
     color: blueviolet;
     background-color: white;
     margin: auto;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     text-decoration: none;
 }
 
-.navbar ul li::after{
+.navbar ul li::after {
     content: '';
     background-color: lightskyblue;
     transition: 0.5s;
@@ -55,16 +58,34 @@
     margin: auto;
 }
 
-.navbar ul li:hover::after{
+.navbar ul li:hover::after {
     width: 100%;
 }
 
-.nav-disappear{
+.nav-disappear {
     transform: translateY(-100px);
     transition: transform 1s;
-
 }
+
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+
 /* CSS for About US (1) */
+
+
 /* Imported Fonts for this page go here */
+
 
 /* Test Comment */
