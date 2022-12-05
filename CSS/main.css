@@ -1,22 +1,53 @@
-*{
+* {
     font-family: sans-serif;
-    background-color: rgb(5, 109, 109);
-    color: white;
+}
+
+body{
+    background-color: black;
+}
+
+/* Slideshow CSS */
+.slideshow-container {
+    height:95vh;
+    width:100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.slideshow{
+    height:100%;
+    width:100%;    
+}
+
+.slideshow img {
+    /* display: flex; */
+    display:block;
+    position: relative;
+    object-fit: cover;
+    overflow: none;
+    /* bottom:40px; */
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    height: 100%;
+    filter:brightness(60%);
+}
+
+.restaurant-logo{
+    position: absolute;
+    /* right:0px;
+    bottom:100px; */
+}
+/* Main page CSS */
+.container{
+    background-color: rgb(255, 245, 222);
+    margin: 0;
 }
 
 
-.container:root{
-    background-color: rgb(245, 237, 220);
-    margin:0;
-}
-
-header{
-    background-position: center;
-    background-size: 100%;
-    position: fixed;
-}
-
-.nav{
+.nav {
     align-items: center;
     height: 40px;
     transition: transform 1s;
@@ -27,36 +58,34 @@ header{
 
 }
 
-.navbar{
+.navbar {
     position: fixed;
     background-color: aqua;
-
-
 }
 
-.navbar:hover{
+.navbar:hover {
     height: 60px;
     position: fixed;
 }
 
-.navbar ul li{
+.navbar ul li {
     list-style: none;
     position: relative;
     padding: 5px;
     display: inline-block;
 }
 
-.navbar ul li:hover{
+.navbar ul li:hover {
     color: rgb(5, 109, 109);
     background-color: white;
     margin: auto;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     text-decoration: none;
 }
 
-.navbar ul li::after{
+.navbar ul li::after {
     content: '';
     background-color: rgb(5, 109, 109);
     transition: 0.5s;
@@ -66,14 +95,13 @@ header{
     margin: auto;
 }
 
-.navbar ul li:hover::after{
+.navbar ul li:hover::after {
     width: 100%;
 }
 
-.nav-disappear{
+.nav-disappear {
     transform: translateY(-100px);
     transition: transform 1s;
-
 }
 
 footer {
@@ -82,7 +110,6 @@ footer {
     width: 100%;
     bottom: 0;
     position: relative;
-
 }
 
 
@@ -112,4 +139,86 @@ iframe {
     width: 80%;
     height: 50;
     filter: invert(100);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+    .text {
+        font-size: 11px
+    }
 }

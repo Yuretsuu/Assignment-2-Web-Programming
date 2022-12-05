@@ -1,3 +1,13 @@
+<?php
+include_once "../DS/User.php";
+include_once "../DS/UserDAO.php";
+
+$userDAO = new UserDAO();
+
+$user = $userDAO->getUser( $userDAO->getLastUserID() );
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +20,7 @@
     <title>Webpage</title>
 </head>
 <body>
-    <h2>Thank you for your order, $</h2>
+    <h2>Thank you for your order, <?php echo $user->Fname; ?></h2>
 
 </body>
 </html>
