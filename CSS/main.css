@@ -67,20 +67,6 @@
     transition: transform 1s;
 }
 
-body {
-    background-color: lightblue;
-}
-
-h1 {
-    color: white;
-    text-align: center;
-}
-
-p {
-    font-family: verdana;
-    font-size: 20px;
-}
-
 
 /* CSS for About US (1) */
 
