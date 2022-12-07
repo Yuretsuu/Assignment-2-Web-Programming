@@ -46,20 +46,13 @@ if (isset($_REQUEST['search'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet"type="text/css" href="inserthere.css">
-    <script src = "" defer ></script>
     <meta charset="UTF-8">
+    <link rel="stylesheet"type="text/css" href="../CSS/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Liz Quach">
     <meta name="email" content="quac0042@algonquinlive.com">
     <meta name="date" content="2022-11-25">
     <title>Take-out Form</title>
-
-    <script>
-        <?php
-        echo "var menu = ".json_encode($menu);
-        ?>
-    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="../JS/searchMenu.js"></script>
@@ -71,7 +64,7 @@ if (isset($_REQUEST['search'])) {
         <div class="container">
             <div class="order-form">
                 <input type="text" name="search" id="search">
-                <input type="submit" name="submitSearch" id="submitSearch">
+                <input type="submit" name="submitSearch" id="submitSearch" class="cart-button">
                 <div class="menu-items">
                     <h3>Pho</h3>
                     <form method="post" id="menu-form">
@@ -99,21 +92,21 @@ if (isset($_REQUEST['search'])) {
                                 ?>
                             </table>
                         </div>
-                        <input type="Submit" value="Add to cart">
+                        <input type="Submit" value="Add to cart" class="cart-button">
                     </form>
                 </div>
                 <h3>Cart</h3>
                 <div class="clear-cart">
                     <form method="post" action="clearCart.php">
                         <input type="hidden" name="redirect" value="form.php">
-                        <input type="submit" value="Clear">
+                        <input type="submit" value="Clear" class="cart-button">
                     </form>
                 </div>
                 <?php include "displayCart.php"; ?>
                 <div class="check-out">
                 <div class="clear-cart">
                     <form method="post" action="checkoutForm.php">
-                        <input type="submit" value="Checkout">
+                        <input type="submit" value="Checkout" class="cart-button">
                     </form>
                 </div>
                 </div>
